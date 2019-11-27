@@ -2,7 +2,7 @@
  	<img class="background#uid#"/>
  	<img class="banner#uid#"/>
 	<img class="icon#uid#" style="transform:translate(-50%,-50%);"/>
-	<div class="txtban#uid#"/>
+	<div class="txtban#uid#"/> 
  
 	<script>
 		jeedom.cmd.update['#id#'] = function(_options) {
