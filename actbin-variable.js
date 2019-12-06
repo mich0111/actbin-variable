@@ -1,9 +1,19 @@
 <div style="padding:0px; margin:2px 2px; width:85px; height:85px;" class="cmd #history# container-fluid tooltips cmd-widget" data-type="info" data-version="#version#" data-eqLogic_id="#eqLogic_id#" data-subtype="numeric" data-cmd_id="#id#" data-cmd_uid="#uid#">
  	<img class="background#uid#"/>
  	<img class="banner#uid#"/>
-	<img class="icon#uid#" style="transform:translate(-50%,-50%);"/>
 	<div class="txtban#uid#"/>
- 
+	<center>
+		<div class="title #hide_name#">
+			<div  class="cmdName">#valueName#</div>
+		</div>
+		<div class="content-sm" style="max-width:50px;max-height:50px;">
+			<span class="imgCmd icon#uid#" style="max-width:50px;max-height:50px;"></span>
+		</div>
+		<div class="value">
+			<span class="timeCmd label label-default timeCmd#id#" data-type="info" data-cmd_id="#value_id#"></span>
+		</div>
+	</center>
+  
 	<script>
 		jeedom.cmd.update['#id#'] = function(_options) {
 			// Récupération de srcState
@@ -26,8 +36,9 @@
 													// Thème du background (optionnel)
 			var srcOnOff = ('#onoff#'!='#'+'theme#') ? '#onoff#': "";
 													// Affichage différenciée des images ON et OFF
-
-			var fldBkg = 'data/customTemplates/dashboard/cmd.action.other.Multi-action-Defaut/fond/';
+			var srcImgProperties      = 'margin=auto text-align=center float=left line-height=50px height=50px width=50px vertical-align=middle'
+               
+ 			var fldBkg = 'data/customTemplates/dashboard/cmd.action.other.Multi-action-Defaut/fond/';
 													// Dossier des images de background
 			var srcMode = "light";					// Mode du background (dark ou light)
 			var srcColBanner = "";					// Couleur du bandeau
@@ -35,6 +46,8 @@
 			var srcColTxtBanner = "black";			// Couleur des caractères du bandeau
 			var srcMode = "light";					// Mode du background (dark ou light)
 			var srcErrorCode = "";					// Nom du paramètre en erreur s'il y a lieu
+			var srcIconOn = srcIcon + '_on.png';
+			var srcIconOff = srcIcon + '_off.png';
 		
 			// Validation des paramètres
 			if (fldIcon == null || fldIcon == "") {
@@ -120,7 +133,7 @@
 				// Affichage des éléments d'erreur
 				$('.background#uid#').empty().attr('src', fldBkg + 'fo_oups1.png');
 				$('.banner#uid#').empty().attr('src', fldBkg + 'fo_banner_red.png');
-				$('.icon#uid#').hide();
+				$('.cmd[data-cmd_id=#id#] .icon#uid#').hide()
 				$('.txtban#uid#').css('color','white');
 				$('.txtban#uid#').empty().text(srcErrorCode);
 			} else {
@@ -131,23 +144,29 @@
 				// Affichage des images
 				$('.background#uid#').empty().attr("src", fldBkg + 'fo_bkg_' + srcTheme + srcMode + '.png');
 				$('.banner#uid#').empty().attr("src", fldBkg + 'fo_banner_' + srcColBanner + '.png');
-				if (srcOnOff == "yes") {
-					if (srcState == 0) {
-						$('.icon#uid#').empty().attr('src', fldIcon + srcIcon + '_off.png');
-					} else {
-						$('.icon#uid#').empty().attr('src', fldIcon + srcIcon + '_on.png');
-					}
-				}
-				 else {
-					$('.icon#uid#').empty().attr('src', fldIcon + srcIcon + '.png');
-				}
 				// Affichage des textes
               	$('.txtban#uid#').css('color',srcColTxtBanner);
 				$('.txtban#uid#').empty().text(srcTxtBanner);
 			}
-			$('.cmd[data-cmd_uid=#uid#]').attr('title','Valeur du '+_options.valueDate+', collectée le '+_options.collectDate);
-		}
+            if (_options.display_value == '1' || _options.display_value == 1 || _options.display_value == '99' || _options.display_value == 99 || _options.display_value == 'on') {
+				if (jeedom.cmd.normalizeName('#name#') == 'on') {
+					$('.cmd[data-cmd_id=#id#]').hide();
+				} else {
+					$('.cmd[data-cmd_id=#id#]').show();
+					$('.cmd[data-cmd_id=#id#] .icon#uid#').empty().append('<img src="'+ fldIcon + srcIconOn + '" ' + srcImgProperties + '>');
+				}
+			} else if (jeedom.cmd.normalizeName('#name#') == 'off') {
+				$('.cmd[data-cmd_id=#id#]').hide();
+			} else {
+				$('.cmd[data-cmd_id=#id#]').show();
+				$('.cmd[data-cmd_id=#id#] .icon#uid#').empty().append('<img src="'+ fldIcon + srcIconOff + '" ' + srcImgProperties + '>');
+			}
+        }
+      
 		jeedom.cmd.update['#id#']({display_value:'#state#',valueDate:'#valueDate#',collectDate:'#collectDate#',alertLevel:'#alertLevel#'});
+		$('.cmd[data-cmd_uid=#uid#] .icon#uid#').off().on('click', function () {
+            jeedom.cmd.execute({id: '#id#'});
+        });
 	</script>
 
 	<style>
@@ -162,14 +181,20 @@
 			height:85px;
 			z-index:4;
 		}
-		img.icon#uid# {
-			position:absolute;
-			margin:0;
-			top:47%;
-			left:52%;
+		div.content-sm {
+			top:5px;
+			margin-left:20%;
 			max-height:50px;
 			max-width:50px;
+			position:absolute;
+		    line-height:50px;*/
+			text-align:center;
 			z-index:2;
+		}
+		img.icon#uid {
+			vertical-align:center;
+			max-height:50px;
+			max-width:50px;
 		}
 		img.banner#uid# {
 			position:absolute;
