@@ -1,4 +1,4 @@
-<div style="padding:0px; margin:2px 2px; width:85px; height:85px;" class="cmd #history# container-fluid tooltips cmd-widget" data-type="info" data-version="#version#" data-eqLogic_id="#eqLogic_id#" data-subtype="numeric" data-cmd_id="#id#" data-cmd_uid="#uid#">
+<div style="padding:0px; margin:2px 2px; width:80px; height:80px;" class="cmd #history# container-fluid tooltips cmd-widget" data-type="info" data-version="#version#" data-eqLogic_id="#eqLogic_id#" data-subtype="numeric" data-cmd_id="#id#" data-cmd_uid="#uid#">
  	<img class="background#uid#"/>
  	<img class="banner#uid#"/>
 	<div class="txtban#uid#"/>
@@ -177,13 +177,13 @@
 			vertical-align:middle;
 			top:82%;
 			left:0%;
-			width:85px;
-			height:85px;
+			width:80px;
+			height:80px;
 			z-index:4;
 		}
 		div.content-sm {
 			top:5px;
-			margin-left:20%;
+			margin-left:18%;
 			max-height:50px;
 			max-width:50px;
 			position:absolute;
@@ -200,16 +200,16 @@
 			position:absolute;
 			top:0%;
 			left:0%;
-			width:85px;
-			height:85px;
+			width:80px;
+			height:80px;
 			z-index:2;
 		}
 		img.background#uid# {
 			position:absolute;
 			top:0%;
 			left:0%;
-			width:85px;
-			height:85px;
+			width:80px;
+			height:80px;
 			z-index:1;
 		}
 	</style>
