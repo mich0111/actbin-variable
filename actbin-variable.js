@@ -3,14 +3,8 @@
  	<img class="banner#uid#"/>
 	<div class="txtban#uid#"/>
 	<center>
-		<div class="title #hide_name#">
-			<div  class="cmdName">#valueName#</div>
-		</div>
 		<div class="content-sm" style="max-width:50px;max-height:50px;">
 			<span class="imgCmd icon#uid#" style="max-width:50px;max-height:50px;"></span>
-		</div>
-		<div class="value">
-			<span class="timeCmd label label-default timeCmd#id#" data-type="info" data-cmd_id="#value_id#"></span>
 		</div>
 	</center>
   
@@ -36,7 +30,7 @@
 													// Thème du background (optionnel)
 			var srcOnOff = ('#onoff#'!='#'+'theme#') ? '#onoff#': "";
 													// Affichage différenciée des images ON et OFF
-			var srcImgProperties      = 'margin=auto text-align=center float=left line-height=50px height=50px width=50px vertical-align=middle'
+			var srcIconProp = 'margin=auto text-align=center float=left line-height=50px height=50px width=50px vertical-align=middle'
                
  			var fldBkg = 'data/customTemplates/dashboard/cmd.action.other.Multi-action-Defaut/fond/';
 													// Dossier des images de background
@@ -153,13 +147,13 @@
 					$('.cmd[data-cmd_id=#id#]').hide();
 				} else {
 					$('.cmd[data-cmd_id=#id#]').show();
-					$('.cmd[data-cmd_id=#id#] .icon#uid#').empty().append('<img src="'+ fldIcon + srcIconOn + '" ' + srcImgProperties + '>');
+					$('.cmd[data-cmd_id=#id#] .icon#uid#').empty().append('<img src="'+ fldIcon + srcIconOn + '" ' + srcIconProp + '>');
 				}
 			} else if (jeedom.cmd.normalizeName('#name#') == 'off') {
 				$('.cmd[data-cmd_id=#id#]').hide();
 			} else {
 				$('.cmd[data-cmd_id=#id#]').show();
-				$('.cmd[data-cmd_id=#id#] .icon#uid#').empty().append('<img src="'+ fldIcon + srcIconOff + '" ' + srcImgProperties + '>');
+				$('.cmd[data-cmd_id=#id#] .icon#uid#').empty().append('<img src="'+ fldIcon + srcIconOff + '" ' + srcIconProp + '>');
 			}
         }
       
@@ -193,8 +187,6 @@
 		}
 		img.icon#uid {
 			vertical-align:center;
-			max-height:50px;
-			max-width:50px;
 		}
 		img.banner#uid# {
 			position:absolute;
