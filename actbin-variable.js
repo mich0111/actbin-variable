@@ -147,18 +147,18 @@
 					$('.cmd[data-cmd_id=#id#]').hide();
 				} else {
 					$('.cmd[data-cmd_id=#id#]').show();
-					$('.cmd[data-cmd_id=#id#] .icon#uid#').empty().append('<img src="'+ fldIcon + srcIconOn + '" ' + srcIconProp + '>');
+					$('.icon#uid#').empty().append('<img src="'+ fldIcon + srcIconOn + '" ' + srcIconProp + '>');
 				}
 			} else if (jeedom.cmd.normalizeName('#name#') == 'off') {
 				$('.cmd[data-cmd_id=#id#]').hide();
 			} else {
 				$('.cmd[data-cmd_id=#id#]').show();
-				$('.cmd[data-cmd_id=#id#] .icon#uid#').empty().append('<img src="'+ fldIcon + srcIconOff + '" ' + srcIconProp + '>');
+				$('.icon#uid#').empty().append('<img src="'+ fldIcon + srcIconOff + '" ' + srcIconProp + '>');
 			}
         }
       
 		jeedom.cmd.update['#id#']({display_value:'#state#',valueDate:'#valueDate#',collectDate:'#collectDate#',alertLevel:'#alertLevel#'});
-		$('.cmd[data-cmd_uid=#uid#] .icon#uid#').off().on('click', function () {
+		$('.icon#uid#').off().on('click', function () {
             jeedom.cmd.execute({id: '#id#'});
         });
 	</script>
