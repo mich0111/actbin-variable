@@ -40,8 +40,15 @@
 			var srcColTxtBanner = "black";			// Couleur des caractères du bandeau
 			var srcMode = "light";					// Mode du background (dark ou light)
 			var srcErrorCode = "";					// Nom du paramètre en erreur s'il y a lieu
-			var srcIconOn = srcIcon + '_on.png';
-			var srcIconOff = srcIcon + '_off.png';
+			var srcIconOn = "";
+			var srcIconOff = "";
+			if (srcOnOff != 'no' ) {
+				srcIconOn = srcIcon + '_on.png';
+				srcIconOff = srcIcon + '_off.png';				
+			} else {
+				srcIconOn = srcIconOff = srcIcon + '.png';
+			}
+
 		
 			// Validation des paramètres
 			if (fldIcon == null || fldIcon == "") {
