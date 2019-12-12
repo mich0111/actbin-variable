@@ -30,3 +30,10 @@ Voici les paramètres à prendre en compte pour l’utilisation de ce widget.
 
 Si l’un des paramètres obligatoires est erroné, le widget vous indiquera celui à corriger, sauf si vous n'avez pas créé ou choisi les bonnes images, dans ce cas, vous verrez une image vide.
 
+Avec le paramétrage suivant:
+
+![Capture1](https://user-images.githubusercontent.com/54777712/70723372-156b2800-1cf9-11ea-8e21-e2bca3f99e25.PNG)
+
+On obtient le résultat suivant:
+
+![Capture](https://user-images.githubusercontent.com/54777712/70723382-18661880-1cf9-11ea-86dc-2e7d085c3346.PNG)
