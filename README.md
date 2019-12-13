@@ -36,4 +36,4 @@ Avec le paramétrage suivant:
 
 On obtient le résultat suivant:
 
-![essai](https://user-images.githubusercontent.com/54777712/70773923-16dc3500-1d79-11ea-8dda-0275b5ec79b7.gif)
+![actbin](https://user-images.githubusercontent.com/54777712/70778799-5e67be80-1d83-11ea-919f-374dc0e75c83.gif)
