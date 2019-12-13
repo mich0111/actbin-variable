@@ -195,6 +195,7 @@
 		}
 		img.banner#uid# {
 			position:absolute;
+			border-radius:0px 0px 6px 6px;
 			bottom:0%;
 			left:0%;
 			width:80px;
@@ -203,6 +204,7 @@
 		}
 		img.background#uid# {
 			position:absolute;
+			border-radius:0px 0px 6px 6px;
 			top:0%;
 			left:0%;
 			width:80px;
