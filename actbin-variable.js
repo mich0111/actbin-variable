@@ -42,7 +42,7 @@
 			// Initialisation des variables
 			var fldBkg = 'data/customTemplates/dashboard/cmd.action.other.Multi-action-Defaut/fond/';
 													// Dossier des images de background
-			var srcIconProp = 'margin=auto text-align=center float=left line-height=50px height=50px width=50px vertical-align=middle'
+			var srcIconProp = 'margin=auto text-align=center float=left line-height=50px height=50px width=50px vertical-align=middle';
 													// Propriété d'affichage de l'icone
 			var srcMode = "light";					// Mode du background (dark ou light)
 			var srcColBanner = "";				// Couleur du bandeau
@@ -64,7 +64,7 @@
 				// Affichage des éléments d'erreur
 				$('.background#uid#').empty().attr('src', fldBkg + 'fo_oups1.png');
 				$('.banner#uid#').empty().attr('src', fldBkg + 'fo_banner_red.png');
-				$('.cmd[data-cmd_id=#id#] .icon#uid#').hide()
+				$('.cmd[data-cmd_id=#id#] .icon#uid#').hide();
 				$('.txtban#uid#').css('color','white');
 				$('.txtban#uid#').empty().text(srcErrorCode);
 			} else {
