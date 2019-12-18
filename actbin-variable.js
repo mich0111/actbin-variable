@@ -4,7 +4,7 @@
 	<div class="txtban#uid#"/>
 	<center>
 		<div class="content-sm actbin-widget" style="max-width:50px;max-height:50px;">
-			<span class="imgCmd icon#uid#" style="max-width:50px;max-height:50px;"></span>
+			<span class="iconcmd iconcmd#uid#" style="max-width:50px;max-height:50px;"></span>
 		</div>
 	</center>
 
@@ -130,19 +130,19 @@
 						$('.cmd[data-cmd_id=#id#]').hide();
 					} else {
 						$('.cmd[data-cmd_id=#id#]').show();
-						$('.icon#uid#').empty().append('<img src="'+ fldIcon + srcIcon + '" ' + srcIconProp + '>');
+						$('.iconcmd#uid#').empty().append('<img src="'+ fldIcon + srcIcon + '" ' + srcIconProp + '>');
 					}
 				} else if (jeedom.cmd.normalizeName('#name#') == 'off') {
 					$('.cmd[data-cmd_id=#id#]').hide();
 				} else {
 					$('.cmd[data-cmd_id=#id#]').show();
-					$('.icon#uid#').empty().append('<img src="'+ fldIcon + srcIcon + '" ' + srcIconProp + '>');
+					$('.iconcmd#uid#').empty().append('<img src="'+ fldIcon + srcIcon + '" ' + srcIconProp + '>');
 				}
 			}
 		}
 
 		jeedom.cmd.update['#id#']({display_value:'#state#',valueDate:'#valueDate#',collectDate:'#collectDate#',alertLevel:'#alertLevel#'});
-		$('.icon#uid#').off().on('click', function () {
+		$('.iconcmd#uid#').off().on('click', function () {
 			jeedom.cmd.execute({id: '#id#'});
 		});
 	</script>
@@ -160,18 +160,18 @@
 			z-index:4;
 		}
 		div.content-sm.actbin-widget {
-            top:5px;
-            margin-left:18%;
-            max-height:50px;
-            max-width:50px;
-            position:absolute;
-            line-height:50px;
-            text-align:center;
-            z-index:2;
-        }
-		.actbin-widget img.icon#uid {
-            vertical-align:center;
-        }
+			top:5px;
+			margin-left:18%;
+			max-height:50px;
+			max-width:50px;
+			position:absolute;
+			line-height:50px;
+			text-align:center;
+			z-index:2;
+		}
+		.actbin-widget img.iconcmd#uid {
+			vertical-align:center;
+		}
 		img.banner#uid# {
 			position:absolute;
 			border-radius:0px 0px 6px 6px;
