@@ -3,7 +3,7 @@
 	<img class="banner#uid#"/>
 	<div class="txtban#uid#"/>
 	<center>
-		<div class="content-sm" style="max-width:50px;max-height:50px;">
+		<div class="content-sm actbin-widget" style="max-width:50px;max-height:50px;">
 			<span class="imgCmd icon#uid#" style="max-width:50px;max-height:50px;"></span>
 		</div>
 	</center>
@@ -159,19 +159,19 @@
 			height:80px;
 			z-index:4;
 		}
-		div.content-sm {
-			top:5px;
-			margin-left:18%;
-			max-height:50px;
-			max-width:50px;
-			position:absolute;
-			line-height:50px;
-			text-align:center;
-			z-index:2;
-		}
-		img.icon#uid {
-			vertical-align:center;
-		}
+		div.content-sm.actbin-widget {
+            top:5px;
+            margin-left:18%;
+            max-height:50px;
+            max-width:50px;
+            position:absolute;
+            line-height:50px;
+            text-align:center;
+            z-index:2;
+        }
+		.actbin-widget img.icon#uid {
+            vertical-align:center;
+        }
 		img.banner#uid# {
 			position:absolute;
 			border-radius:0px 0px 6px 6px;
