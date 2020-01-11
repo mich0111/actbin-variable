@@ -156,7 +156,6 @@
 			top:82%;
 			left:0%;
 			width:80px;
-			height:80px;
 			z-index:4;
 		}
 		div.content-sm.actbin-widget {
